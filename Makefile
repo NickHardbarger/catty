@@ -1,9 +1,9 @@
 CC = cc
-CFLAGS = -std=c99 -pedantic -Wall -Wextra -Os
-LDFLAGS = -lvte-2.91
+CFLAGS = -std=c99 -pedantic -Wall -Wextra -Os `pkg-config --cflags vte-2.91`
+LIBS = `pkg-config --libs vte-2.91`
 
 catty: catty.c
-	${CC} -o catty catty.c ${CFLAGS} ${LDFLAGS}
+	${CC} -o catty catty.c ${CFLAGS} ${LIBS}
 
 install: catty
 	rm /home/nickh/nix/system/bin/catty
