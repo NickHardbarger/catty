@@ -1,3 +1,6 @@
+#define FONT "JetBrainsMonoNF"
+#define FONT_SIZE 12
+
 #define CLR_R(x) (((x) & 0xff0000) >> 16)
 #define CLR_G(x) (((x) & 0x00ff00) >> 8)
 #define CLR_B(x) (((x) & 0x0000ff) >> 0)

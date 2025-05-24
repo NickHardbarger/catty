@@ -18,6 +18,11 @@ int main(int argc, char *argv[]) {
 
 #include "config.h"
 
+  PangoFontDescription *pfd = pango_font_description_new();
+  pango_font_description_set_size(pfd, FONT_SIZE * PANGO_SCALE);
+  pango_font_description_set_family(pfd, FONT);
+  vte_terminal_set_font(VTE_TERMINAL(terminal), pfd);
+
   gchar **envp = g_get_environ();
   gchar **command =
       (gchar *[]){g_strdup(g_environ_getenv(envp, "SHELL")), NULL};
