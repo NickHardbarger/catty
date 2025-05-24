@@ -16,6 +16,8 @@ int main(int argc, char *argv[]) {
   window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title(GTK_WINDOW(window), "catty");
 
+#include "config.h"
+
   gchar **envp = g_get_environ();
   gchar **command =
       (gchar *[]){g_strdup(g_environ_getenv(envp, "SHELL")), NULL};
