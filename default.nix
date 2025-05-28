@@ -2,5 +2,5 @@ let
   pkgs = import <nixpkgs> { };
 in
 {
-  catty = pkgs.CallPackage ./build.nix { };
+  catty = pkgs.callPackage ./build.nix { };
 }
