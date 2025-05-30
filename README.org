@@ -1,0 +1,3 @@
+* TODO Todos [0/2]
+  - [ ] Figure out how to add copy/paste keybindings
+  - [ ] Investigate that deprecated function
