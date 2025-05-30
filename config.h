@@ -11,8 +11,8 @@
     .blue = CLR_16(CLR_B(x)), .alpha = y                                       \
   }
 
-static int fg = 0xffffff;
-static int bg = 0x000000;
+static int fg = 0xebdbb2;
+static int bg = 0x282828;
 static float opacity = 0.85;
 
 static int col0 = 0x282828;
@@ -28,6 +28,6 @@ static int col9 = 0xfb4934;
 static int col10 = 0xb8bb26;
 static int col11 = 0xfabd2f;
 static int col12 = 0x83a598;
-static int col13 = 0xb85e7b;
+static int col13 = 0xd3869b;
 static int col14 = 0x8ec07c;
 static int col15 = 0xebdbb2;

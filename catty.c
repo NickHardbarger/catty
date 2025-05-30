@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
   gtk_window_set_title(GTK_WINDOW(window), "catty");
 
   vte_terminal_set_colors(
-      VTE_TERMINAL(terminal), &CLR_GDK(fg, 1), &(GdkRGBA){.alpha = opacity},
+      VTE_TERMINAL(terminal), &CLR_GDK(fg, 1), &CLR_GDK(bg, opacity),
       (const GdkRGBA[]){CLR_GDK(col0, 1), CLR_GDK(col1, 1), CLR_GDK(col2, 1),
                         CLR_GDK(col3, 1), CLR_GDK(col4, 1), CLR_GDK(col5, 1),
                         CLR_GDK(col6, 1), CLR_GDK(col7, 1), CLR_GDK(col8, 1),
