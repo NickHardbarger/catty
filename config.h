@@ -13,7 +13,7 @@
 
 static int fg = 0xebdbb2;
 static int bg = 0x282828;
-static float opacity = 0.85;
+static float opacity = 0.90;
 
 static int col0 = 0x282828;
 static int col1 = 0xcc241d;
