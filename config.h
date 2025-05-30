@@ -10,15 +10,24 @@
     .red = CLR_16(CLR_R(x)), .green = CLR_16(CLR_G(x)),                        \
     .blue = CLR_16(CLR_B(x)), .alpha = y                                       \
   }
-vte_terminal_set_colors(
-    VTE_TERMINAL(terminal), &CLR_GDK(0xffffff, 1), &(GdkRGBA){.alpha = 0.85},
-    (const GdkRGBA[]){
-        CLR_GDK(0x282828, 1), CLR_GDK(0xcc241d, 1), CLR_GDK(0x98971a, 1),
-        CLR_GDK(0xd79921, 1), CLR_GDK(0x458588, 1), CLR_GDK(0xb16286, 1),
-        CLR_GDK(0x689d6a, 1), CLR_GDK(0xa89984, 1), CLR_GDK(0x928374, 1),
-        CLR_GDK(0xfb4934, 1), CLR_GDK(0xb8bb26, 1), CLR_GDK(0xfabd2f, 1),
-        CLR_GDK(0x83a598, 1), CLR_GDK(0xb85e7b, 1), CLR_GDK(0x8ec07c, 1),
-        CLR_GDK(0xebdbb2, 1)},
-    16);
-gtk_widget_override_background_color(window, GTK_STATE_FLAG_NORMAL,
-                                     &CLR_GDK(0x000000, 0.85));
+
+static int fg = 0xffffff;
+static int bg = 0x000000;
+static float opacity = 0.85;
+
+static int col0 = 0x282828;
+static int col1 = 0xcc241d;
+static int col2 = 0x98971a;
+static int col3 = 0xd79921;
+static int col4 = 0x458588;
+static int col5 = 0xb16286;
+static int col6 = 0x689d6a;
+static int col7 = 0xa89984;
+static int col8 = 0x928374;
+static int col9 = 0xfb4934;
+static int col10 = 0xb8bb26;
+static int col11 = 0xfabd2f;
+static int col12 = 0x83a598;
+static int col13 = 0xb85e7b;
+static int col14 = 0x8ec07c;
+static int col15 = 0xebdbb2;

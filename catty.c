@@ -1,5 +1,7 @@
 #include <vte/vte.h>
 
+#include "config.h"
+
 static void child_ready(VteTerminal *terminal, GPid pid, GError *error,
                         gpointer user_data) {
   if (!terminal)
@@ -16,7 +18,18 @@ int main(int argc, char *argv[]) {
   window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title(GTK_WINDOW(window), "catty");
 
-#include "config.h"
+  vte_terminal_set_colors(
+      VTE_TERMINAL(terminal), &CLR_GDK(fg, 1), &(GdkRGBA){.alpha = opacity},
+      (const GdkRGBA[]){CLR_GDK(col0, 1), CLR_GDK(col1, 1), CLR_GDK(col2, 1),
+                        CLR_GDK(col3, 1), CLR_GDK(col4, 1), CLR_GDK(col5, 1),
+                        CLR_GDK(col6, 1), CLR_GDK(col7, 1), CLR_GDK(col8, 1),
+                        CLR_GDK(col9, 1), CLR_GDK(col10, 1), CLR_GDK(col11, 1),
+                        CLR_GDK(col12, 1), CLR_GDK(col13, 1), CLR_GDK(col14, 1),
+                        CLR_GDK(col15, 1)},
+      16);
+  /* WARNING: this function is deprecated! */
+  gtk_widget_override_background_color(window, GTK_STATE_FLAG_NORMAL,
+                                       &CLR_GDK(bg, opacity));
 
   PangoFontDescription *pfd = pango_font_description_new();
   pango_font_description_set_size(pfd, FONT_SIZE * PANGO_SCALE);
